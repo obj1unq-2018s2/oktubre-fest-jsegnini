@@ -1,0 +1,25 @@
+import oktoberfest.*
+
+describe "octubrefest"{
+	var hofbrau = new Rubia(pais="Alemania", lupulo=0.3, graduacion=0.08)
+	var grolsch = new Rubia(pais="Holanda", lupulo=0.1, graduacion=0.3)
+	var fragen = new Negra(pais="Belgica", lupulo=0.4)
+	var prague = new Roja(pais="Rep. Checa", lupulo=0.1)
+	
+	
+	var car1 = new Carpa(limite=30, hayBanda=true, marcaQueVende=hofbrau)
+	var car2 = new Carpa(limite=35, hayBanda=false, marcaQueVende=fragen)
+	var car3 = new Carpa(limite=32, hayBanda=true, marcaQueVende=grolsch)
+	var car4 = new Carpa(limite=5, hayBanda=false, marcaQueVende=prague)
+	
+	var hans = new Aleman(peso=80, gustaMusica=true, aguante=40)
+	var klaus = new Aleman(peso=75, gustaMusica=false, aguante=55)
+	var pierre = new Belga(peso=67, gustaMusica=true, aguante=45)
+	var jacques = new Belga(peso=77, gustaMusica=true, aguante=87)
+	var vladi = new Checo(peso=69, gustaMusica=false, aguante=54)
+	var wolf = new Checo(peso=89, gustaMusica=false, aguante=20)
+	
+	test "contenido de alcohol" {
+		assert.equals(0.04, car1.venderJarra(0.5).contAlcohol())
+	}
+}
